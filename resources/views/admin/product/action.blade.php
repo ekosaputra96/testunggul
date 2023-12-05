@@ -1,0 +1,1 @@
+<button type="button" class="btn btn-sm btn-info" onclick="editProduct('{{$id}}')">Edit</button> <button type="button" class="btn btn-sm btn-danger" onclick="delProduct('{{$id}}')">Delete</button>
