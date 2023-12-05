@@ -133,7 +133,7 @@ class ProductController extends Controller
                 return $this->helper->failedResponse($th->getMessage(), $th->getCode());
             }
     
-            throw new Exception($th->getMessage(), 400);
+            throw new Exception($th->getMessage());
         }
     }
 
