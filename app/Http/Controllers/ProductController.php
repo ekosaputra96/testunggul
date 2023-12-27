@@ -21,7 +21,7 @@ class ProductController extends Controller
     }
 
     public function datatable(){
-        $products = Product::select('products.*', 'suppliers.nama as nama_supplier')->leftjoin('suppliers', 'products.supplier_id', '=', 'suppliers.id')->orderBy('products.created_at', 'desc');
+        $products = Product::select('products.*', 'suppliers.nama as nama_supplier')->leftjoin('suppliers', 'products.supplier_id', '=', 'suppliers.id');
 
         return DataTables::of($products)->addColumn('action', 'admin.product.action')->make(true);
     }

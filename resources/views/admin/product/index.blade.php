@@ -14,6 +14,7 @@
         <table class="table table-striped" id="product-table" style="width: 100%">
             <thead>
               <tr>
+                <th scope="col">Created At</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Deskripsi</th>
                 <th scope="col">Harga</th>

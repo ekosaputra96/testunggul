@@ -12,8 +12,14 @@ $(function () {
         responsive: true,
         paging: true,
         pageLength: 10,
+        order: [[0, 'desc']],
         ajax: route("product.datatable"),
         columns: [
+            {
+                name: "created_at",
+                data: "created_at",
+                visible: false
+            },
             {
                 name: "nama",
                 data: "nama",
