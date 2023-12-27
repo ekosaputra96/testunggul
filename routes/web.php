@@ -25,6 +25,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware('auth')->prefix('admin')->group(function(){
 
     // products
-    Route::get('product/datatable', [ProductController::class, 'datatable'])->name('product-table');
+    Route::get('product/datatable', [ProductController::class, 'datatable'])->name('product.datatable');
     Route::resource('product', ProductController::class);
 });
