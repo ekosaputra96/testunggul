@@ -13,7 +13,7 @@ $(function () {
         paging: true,
         pageLength: 10,
         order: [[0, 'desc']],
-        ajax: route("product.datatable"),
+        ajax: route("product.index"),
         columns: [
             {
                 name: "created_at",

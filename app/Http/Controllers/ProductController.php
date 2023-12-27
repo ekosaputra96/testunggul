@@ -20,20 +20,20 @@ class ProductController extends Controller
         $this->helper = $helper;
     }
 
-    public function datatable(){
-        $products = Product::select('products.*', 'suppliers.nama as nama_supplier')->leftjoin('suppliers', 'products.supplier_id', '=', 'suppliers.id');
-
-        return DataTables::of($products)->addColumn('action', 'admin.product.action')->make(true);
-    }
-
     /**
      * Display a listing of the resource.
-     *
+     *P
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         //
+        if(request()->ajax()){
+            $products = Product::select('products.*', 'suppliers.nama as nama_supplier')->leftjoin('suppliers', 'products.supplier_id', '=', 'suppliers.id');
+
+            return DataTables::of($products)->addColumn('action', 'admin.product.action')->make(true);
+        }
+
         $suppliers = Supplier::get(['id', 'nama'])->pluck('nama', 'id');
 
         return view('admin.product.index', compact('suppliers'));
